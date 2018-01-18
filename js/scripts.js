@@ -3,12 +3,10 @@ var countriesList = $('#countries');
 
 $('#search').click(searchCountries);
 
+
 function searchCountries() {
  	var countryName = $('#country-name').val();
-if(!countryName.length) {
-	countryName = 'Poland'
-};
-	
+if(!countryName.length) countryName = 'Poland';
 $.ajax({
   		url: url + countryName,
   		method: 'GET',
@@ -23,3 +21,4 @@ function showCountriesList(resp) {
    	$('<li>').text(item.name + ' (Capital:  ' + item.capital + ')').appendTo(countriesList);
 	});
 }
+
